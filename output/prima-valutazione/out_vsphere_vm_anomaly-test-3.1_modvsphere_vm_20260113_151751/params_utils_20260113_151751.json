@@ -1,0 +1,20 @@
+{
+  "script": "utils",
+  "timestamp": "2026-01-13T15:17:51.338056",
+  "parameters": {
+    "root": "./dataset",
+    "source": "vsphere_vm",
+    "out": "out_vsphere_vm_anomaly-test-3.1_modvsphere_vm_20260113_151751",
+    "start": "2025-09-01",
+    "end": "2025-10-23",
+    "window": 35,
+    "holdout": 5,
+    "iforest": true,
+    "min_events": 100,
+    "voted_features_min": 2,
+    "threshold_strong": 1.5,
+    "threshold_medium": 1.0,
+    "print_limit": 50,
+    "explain_top_k": 5
+  }
+}

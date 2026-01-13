@@ -1,0 +1,6 @@
+source,date,score,voted_features,explain_top,total_events,bytes_total,unique_src_ip,unique_dst_ip,iforest_score,label
+vsphere_vm,2025-10-17,0.0,0,,4090.0,0.0,0.0,0.0,-0.05302499854751941,NORMAL
+vsphere_vm,2025-10-18,0.0,0,,4328.0,0.0,0.0,0.0,-0.12306788478737252,NORMAL
+vsphere_vm,2025-10-19,2.0,3,"events_raw:+5826.33(UP), events_after_day_filter:+10.78(UP), total_events:+10.78(UP)",13896.0,0.0,0.0,0.0,-0.14946445299997357,STRONG
+vsphere_vm,2025-10-20,2.0,3,"events_raw:+5827.68(UP), events_after_day_filter:+3.52(UP), total_events:+3.52(UP)",6786.0,0.0,0.0,0.0,-0.22545557613852063,STRONG
+vsphere_vm,2025-10-21,2.0,1,events_raw:-1777.31(DOWN),361.0,0.0,0.0,0.0,-0.08490205713670129,STRONG

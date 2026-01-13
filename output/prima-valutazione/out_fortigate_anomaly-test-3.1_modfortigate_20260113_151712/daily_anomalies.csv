@@ -1,0 +1,6 @@
+source,date,score,voted_features,explain_top,total_events,bytes_total,unique_src_ip,unique_dst_ip,iforest_score,label
+fortigate,2025-10-17,0.0,0,,0.0,0.0,0.0,0.0,-0.024484849335211223,LOW_VOLUME
+fortigate,2025-10-18,0.0,0,,0.0,0.0,0.0,0.0,-0.024484849335211223,LOW_VOLUME
+fortigate,2025-10-19,2.0,1,events_raw:+5826.33(UP),0.0,0.0,0.0,0.0,-0.024484849335211223,LOW_VOLUME
+fortigate,2025-10-20,2.0,1,events_raw:+5827.68(UP),0.0,0.0,0.0,0.0,-0.384911661098035,LOW_VOLUME
+fortigate,2025-10-21,2.0,1,events_raw:-1798.89(DOWN),0.0,0.0,0.0,0.0,0.026638734099444727,LOW_VOLUME
