@@ -126,3 +126,10 @@ All'interno della cartella di output sono presenti due sottocartelle.
     Tutti i cambiamenti rispetto alla versione precedente sono documentati in `changelog_V2`.
 
 Se si vuole provare ad eseguire questa valutazione, spostare gli script nella directory principale del progetto.
+
+
+## Analisi dei risultati
+
+Per le tipologie di dispositivi in cui sono stati rilevati molti id differenti (`fortigate` e `watchguard`) le anomalie rilevate aumentano drasticamente tra la versione 1 e la versione 2.
+
+Per gli altri dispositivi i risultati rimangono pressochè invariati. 

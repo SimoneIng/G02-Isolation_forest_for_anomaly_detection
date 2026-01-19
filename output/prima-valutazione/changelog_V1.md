@@ -18,7 +18,4 @@ Ottimizzare l'esecuzione processando una singola tipologia di dispositivo sorgen
 
 ## Risultato
 
-L'algoritmo di ML rimane invariato rispetto alla versione base, ma l'architettura di esecuzione ora è modulare. I modelli di IF sono addestrati specificatamente sui dati di quella sorgente. 
-
-
-## Analisi dei risultati
+L'algoritmo di ML rimane invariato rispetto alla versione base, ma l'architettura di esecuzione ora è modulare. I modelli di IF sono addestrati specificatamente sui dati di quella sorgente.

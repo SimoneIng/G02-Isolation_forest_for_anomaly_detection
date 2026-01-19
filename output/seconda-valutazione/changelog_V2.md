@@ -31,5 +31,3 @@ Motivazione: Evitare che un dispositivo ad alto traffico nasconda anomalie di un
 ## Risultato
 
 Ora l'analisi è specifica e i report indicano esattamente quale dispositivo ha rilevato anomalie. 
-
-## Analisi dei risultati
