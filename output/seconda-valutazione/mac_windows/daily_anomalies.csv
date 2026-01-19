@@ -1,0 +1,6 @@
+source,device_id,date,score,voted_features,iforest_score,label
+mac_windows,macsrvdc.mac.local,2025-10-17,0.0,0,0.03897356241557065,NORMAL
+mac_windows,macsrvdc.mac.local,2025-10-18,0.0,0,0.04239880292084336,NORMAL
+mac_windows,macsrvdc.mac.local,2025-10-19,2.0,1,-0.17126458211456608,STRONG
+mac_windows,macsrvdc.mac.local,2025-10-20,2.0,1,-0.17126458211456608,STRONG
+mac_windows,macsrvdc.mac.local,2025-10-21,2.0,1,-0.13619871945144923,STRONG

@@ -8,7 +8,7 @@ DATASET_DIR="./dataset"
 for DEV in "${DEVICES[@]}"; do
     echo "Avvio analisi per $DEV"
 
-    Python3 anomaly-test-3.1_mod.py "$DATASET_DIR" \
+    Python3 anomaly-detection_v1.py "$DATASET_DIR" \
       --source "$DEV" \
       --iforest \
       --start 2025-09-01 \

@@ -1,21 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-    usare solo per test — con stampa anomalie e spiegabilità (feature-level)
-
-    Output:
-      - out/daily_features.csv
-      - out/daily_anomalies.csv               (con label e explain_top)
-      - out/daily_iforest_scores.csv          (se --iforest)
-      - out/daily_anomaly_explanations.csv    (lungo; una riga per feature spiegata)
-
-    Esempio:
-      python anomaly-test-2.py ./dataset \
-        --start 2025-09-01 --end 2025-10-23 \
-        --holdout 5 --iforest --out out \
-        --min-events 100 --threshold-strong 1.5 --threshold-medium 1.0 \
-        --voted-features-min 2 --print-limit 50 --explain-top-k 5
-"""
 
 from __future__ import annotations
 import re
@@ -85,7 +69,7 @@ def parse_folder_date(name: str) -> Optional[datetime]:
     except ValueError:
         return None
 
-def list_source_day_folders(root: Path, start: Optional[str], end: Optional[str]) -> List[Tuple[str, datetime, Path]]:
+def list_source_day_folders(root: Path, start: Optional[str], end: Optional[str], target_source: Optional[str] = None) -> List[Tuple[str, datetime, Path]]:
     # Elenca le sottocartelle che rispettano il formato nome-data e filtra per intervallo temporale
     start_dt = dateparser.parse(start).date() if start else None
     print(start_dt)
@@ -99,6 +83,13 @@ def list_source_day_folders(root: Path, start: Optional[str], end: Optional[str]
         if not dt:
             continue
         src = p.name.split("-")[0]
+        
+        ## Applicazione filtro target_source
+        # se è stato specificato un target_source e la cartella non lo rispetta bisogna saltarla
+        if target_source and src != target_source: 
+            continue
+        # -----
+        
         ddate = dt.date()
         if start_dt and ddate < start_dt: continue
         if end_dt and ddate > end_dt: continue
@@ -347,13 +338,17 @@ def run(root: Path, outdir: Path, start: Optional[str], end: Optional[str],
         window_days: int, enable_iforest: bool, holdout_days: int,
         min_events: int, voted_features_min: int,
         threshold_strong: float, threshold_medium: float,
-        print_limit: int, explain_top_k: int):
+        print_limit: int, explain_top_k: int,
+        target_source: Optional[str] = None): # Nuovo argomento
 
     outdir.mkdir(parents=True, exist_ok=True) # Crea dir di output se non esiste
 
-    items = list_source_day_folders(root, start, end) # Trova tutte le cartelle per le giornate
+    items = list_source_day_folders(root, start, end, target_source=target_source) # Trova tutte le cartelle per le giornate (ora passiamo anche target_source)
+    
     if not items:
-        print("No <source>-DD.MM.YYYY folders found in", root); return
+        ## Messaggio di errore più specifico
+        msg_src = f" for source '{target_source}'" if target_source else "" 
+        print(f"No <source>-DD.MM.YYYY folders found in {root}{msg_src}"); return
 
     desired_lower = set(ALIAS_LOWER_TO_CANON.keys())
 
@@ -480,6 +475,10 @@ if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description="Daily per-source anomaly detection (Python, optional GPU).")
     ap.add_argument("root", type=str, help="Dataset root containing <source>-DD.MM.YYYY folders")
+    
+    ### NUOVO ARGOMENTO
+    ap.add_argument("--source", type=str, default=None, help="Specifica il dispositivo da analizzare (es. watchguard)")
+    
     ap.add_argument("--out", type=str, default="out", help="Output directory")
     ap.add_argument("--start", type=str, default=None, help="Start date (e.g. 2025-09-01)")
     ap.add_argument("--end", type=str, default=None, help="End date (e.g. 2025-10-23)")
@@ -496,10 +495,13 @@ if __name__ == "__main__":
     args = ap.parse_args()
 
     nomefile = sys.argv[0].split("/")[-1].replace(".py","")
-    args.out = args.out + "_" +nomefile + datetime.now().strftime("_%Y%m%d_%H%M%S")
+    suffix_src = f"{args.source}" if args.source else "_ALL"
+    args.out = args.out + "_" +nomefile + suffix_src + datetime.now().strftime("_%Y%m%d_%H%M%S")
+    
     params_file = utils.save_execution_params(args, Path(args.out))
 
     print("root:", args.root)
+    print("source:", args.source)
     print("out:", args.out)
     print("start", args.start)
     print("end", args.end)
@@ -513,8 +515,9 @@ if __name__ == "__main__":
     print("print_limit", args.print_limit)
     print("explain_top_k", args.explain_top_k)
 
-
+    # Passiamo args.source come target_source
     run(Path(args.root), Path(args.out), args.start, args.end, args.window, args.iforest, args.holdout,
         args.min_events, args.voted_features_min, args.threshold_strong, args.threshold_medium,
-        args.print_limit, args.explain_top_k)
+        args.print_limit, args.explain_top_k,
+        target_source=args.source)
 

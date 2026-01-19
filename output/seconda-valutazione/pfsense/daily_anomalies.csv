@@ -1,0 +1,6 @@
+source,device_id,date,score,voted_features,iforest_score,label
+pfsense,pfsense_default,2025-10-17,0.0,0,0.02815289409462335,NORMAL
+pfsense,pfsense_default,2025-10-18,0.0,0,0.08262486300231087,NORMAL
+pfsense,pfsense_default,2025-10-19,2.0,1,-0.01469308497601196,STRONG
+pfsense,pfsense_default,2025-10-20,2.0,1,-0.029648016959521906,STRONG
+pfsense,pfsense_default,2025-10-21,1.5,2,-0.13428584592253845,STRONG
