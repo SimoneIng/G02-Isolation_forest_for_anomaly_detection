@@ -14,13 +14,8 @@ for DEV in "${DEVICES[@]}"; do
     echo ""
     echo ">>> Elaborazione dispositivo: $DEV"
     
-    # Definiamo una sottocartella specifica per il dispositivo dentro i risultati
-    # Esempio: ./results_analysis/fortigate
     DEV_OUT_DIR="$OUTPUT_BASE_DIR/$DEV"
 
-    # Esecuzione dello script Python
-    # Passiamo --source per filtrare le cartelle nel dataset
-    # Passiamo --out come prefisso per la cartella di output finale
     python3 "$PYTHON_SCRIPT" "$DATASET_DIR" \
       --source "$DEV" \
       --iforest \

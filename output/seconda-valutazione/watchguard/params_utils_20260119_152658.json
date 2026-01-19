@@ -1,0 +1,21 @@
+{
+  "script": "utils",
+  "timestamp": "2026-01-19T15:26:58.998608",
+  "parameters": {
+    "root": "./dataset",
+    "source": "watchguard",
+    "out": ".//watchguard_anomaly-detection_v2_watchguard_20260119_152658",
+    "start": "2025-09-01",
+    "end": "2025-10-23",
+    "window": 35,
+    "holdout": 5,
+    "iforest": true,
+    "min_events": 100,
+    "voted_features_min": 2,
+    "threshold_strong": 1.5,
+    "threshold_medium": 1.0,
+    "print_limit": 50,
+    "explain_top_k": 5,
+    "debug": false
+  }
+}

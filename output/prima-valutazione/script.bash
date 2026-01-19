@@ -11,8 +11,8 @@ for DEV in "${DEVICES[@]}"; do
     Python3 anomaly-detection_v1.py "$DATASET_DIR" \
       --source "$DEV" \
       --iforest \
-      --start 2025-09-01 \
-      --end 2025-10-23 \
+      --start "2025-09-01" \
+      --end "2025-10-23" \
       --holdout 5 \
       --out "out_$DEV" \
       --min-events 100

@@ -1,6 +1,6 @@
-source,device_id,date,score,voted_features,iforest_score,label
-vsphere_vm,localhost,2025-10-17,0.0,0,-0.05300137926068549,NORMAL
-vsphere_vm,localhost,2025-10-18,0.0,0,-0.09694667910376142,NORMAL
-vsphere_vm,localhost,2025-10-19,2.0,1,-0.2646194132647156,STRONG
-vsphere_vm,localhost,2025-10-20,2.0,1,-0.2646194132647156,STRONG
-vsphere_vm,localhost,2025-10-21,0.0,0,-0.11796246099917873,NORMAL
+source,device_id,date,score,voted_features,explain_top,total_events,bytes_total,unique_src_ip,unique_dst_ip,iforest_score,label
+vsphere_vm,localhost,2025-10-17,0.0,0,,4090.0,0.0,0.0,0.0,-0.046942213355986806,NORMAL
+vsphere_vm,localhost,2025-10-18,0.0,0,,4328.0,0.0,0.0,0.0,-0.11798419039204378,NORMAL
+vsphere_vm,localhost,2025-10-19,2.0,3,"events_raw:+5826.33(UP), events_after_day_filter:+10.78(UP), total_events:+10.78(UP)",13896.0,0.0,0.0,0.0,-0.16488423985444756,STRONG
+vsphere_vm,localhost,2025-10-20,2.0,3,"events_raw:+5827.68(UP), events_after_day_filter:+3.52(UP), total_events:+3.52(UP)",6786.0,0.0,0.0,0.0,-0.23888879435111554,STRONG
+vsphere_vm,localhost,2025-10-21,2.0,1,events_raw:-1777.31(DOWN),361.0,0.0,0.0,0.0,-0.08078882287789846,STRONG

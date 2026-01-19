@@ -1,6 +1,6 @@
-source,device_id,date,score,voted_features,iforest_score,label
-mac_windows,macsrvdc.mac.local,2025-10-17,0.0,0,0.03897356241557065,NORMAL
-mac_windows,macsrvdc.mac.local,2025-10-18,0.0,0,0.04239880292084336,NORMAL
-mac_windows,macsrvdc.mac.local,2025-10-19,2.0,1,-0.17126458211456608,STRONG
-mac_windows,macsrvdc.mac.local,2025-10-20,2.0,1,-0.17126458211456608,STRONG
-mac_windows,macsrvdc.mac.local,2025-10-21,2.0,1,-0.13619871945144923,STRONG
+source,device_id,date,score,voted_features,explain_top,total_events,bytes_total,unique_src_ip,unique_dst_ip,iforest_score,label
+mac_windows,macsrvdc.mac.local,2025-10-17,0.0,0,,68770.0,0.0,0.0,0.0,0.02841800781565129,NORMAL
+mac_windows,macsrvdc.mac.local,2025-10-18,0.0,0,,68730.0,0.0,0.0,0.0,0.055132636274191515,NORMAL
+mac_windows,macsrvdc.mac.local,2025-10-19,2.0,3,"events_raw:+124.67(UP), events_after_day_filter:+124.67(UP), total_events:+124.67(UP)",102879.0,0.0,0.0,0.0,-0.17414332077060124,STRONG
+mac_windows,macsrvdc.mac.local,2025-10-20,2.0,3,"events_raw:+117.76(UP), events_after_day_filter:+117.76(UP), total_events:+117.76(UP)",102600.0,0.0,0.0,0.0,-0.3730897891368613,STRONG
+mac_windows,macsrvdc.mac.local,2025-10-21,2.0,3,"events_raw:-33.80(DOWN), events_after_day_filter:-33.80(DOWN), total_events:-33.80(DOWN)",58479.0,0.0,0.0,0.0,-0.10863234758944285,STRONG

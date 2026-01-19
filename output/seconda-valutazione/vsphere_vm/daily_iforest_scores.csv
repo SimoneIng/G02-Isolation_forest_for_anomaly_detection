@@ -1,0 +1,6 @@
+source,device_id,date,iforest_score
+vsphere_vm,localhost,2025-10-17,-0.046942213355986806
+vsphere_vm,localhost,2025-10-18,-0.11798419039204378
+vsphere_vm,localhost,2025-10-19,-0.16488423985444756
+vsphere_vm,localhost,2025-10-20,-0.23888879435111554
+vsphere_vm,localhost,2025-10-21,-0.08078882287789846
