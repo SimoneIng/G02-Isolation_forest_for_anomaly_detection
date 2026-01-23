@@ -4,6 +4,10 @@ Analisi di anomalie di rete con Isolation Forest su dispositivi di rete (firewal
 ## Materiale fornito in Input
 Lo script `anomaly-test-3.1_mod.py` implementa un sistema di rilevamento anomalie basato sull'algoritmo **Isolation Forest**. L'obiettivo è analizzare il traffico di rete proveniente da diverse fonti eterogenee (firewall fisici, virtuali ecc) per identificare comportamenti anomali.
 
+Cartella d'esempio: `fortigate-01.10.2025`
+
+Al suo intero sono presenti due file con estenzione `.csv`. 
+
 ###  Dataset
 
 Il dataset è raggruppato in cartelle che indicano la tipologia di dispositivo da cui sono stati raccolti i dati e la giornata in cui sono stati raccolti.
@@ -109,6 +113,7 @@ Raffinare l'analisi in due step:
 
 3. Confrontare brevemente i risultati.
 
+
 ## Output
 
 All'interno della cartella di output sono presenti due sottocartelle. 
@@ -125,11 +130,21 @@ All'interno della cartella di output sono presenti due sottocartelle.
 
     Tutti i cambiamenti rispetto alla versione precedente sono documentati in `changelog_V2`.
 
-Se si vuole provare ad eseguire questa valutazione, spostare gli script nella directory principale del progetto.
-
 
 ## Analisi dei risultati
 
 Per le tipologie di dispositivi in cui sono stati rilevati molti id differenti (`fortigate` e `watchguard`) le anomalie rilevate aumentano drasticamente tra la versione 1 e la versione 2.
 
 Per gli altri dispositivi i risultati rimangono pressochè invariati. 
+
+##  IDE e installazione
+
+Per lo sviluppo è stato utilizzato come IDE Visual Studio Code.
+
+Per poter provare ad utilizzare gli script è necessario installare Python. Dopodichè, procedere ad installare tutte le dipendenze necessarie con il comando: `pip install -r requirements.txt`. 
+
+Per eseguire la prima valutazione, spostare gli script `anomaly-detection_v1.py` e `script.bash` nella cartella root e lanciare lo script bash con `./script.bash`.
+
+Procedimento analogo per ottenere la seconda valutazione. 
+
+Nota: Il dataset non è stato caricato su github per motivi di privacy. Per poter provare gli script è necessario utilizzare un dataset pubblico (o raccogliersi i dati da sè). 
